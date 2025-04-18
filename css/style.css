@@ -1,0 +1,419 @@
+@font-face {
+    font-family: Neues-Bauen;
+    src: url(../../Neues\ Bauen.ttf);
+}
+
+@font-face {
+    font-family: Marlos;
+    src: url(../Marlos.otf);
+}
+
+@font-face {
+    font-family: Interea;
+    src: url(../Interea.ttf);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 7rem;
+    margin: 0%;
+    position: absolute;
+    top: 300px;
+    width: -75px;
+    right: 12%;
+    transition: 1s;
+    margin-bottom: 190px;
+    font-family: Neues-Bauen;
+    color: #ee3a5c;
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+}
+
+p {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 430px;
+    width: -70px;
+    right: 19%;
+    transition: 1s;
+    margin-bottom: 190px;
+    font-family: Interea;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.user-text {
+    color: #ee3a5c ;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff, 0px 0px 20px #fff, 0px 0px 25px #fff, 0px 0px 30px #fff, 0px 0px 35px #fff;
+    font-family: Marlos;
+}
+
+.polaroid-camera {
+    transition: 0.5s;
+    position: relative;
+    top: -100px;
+    width: 750px;
+}
+
+.polaroid-camera::before, .polaroid-camera::after {
+    content:"";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 0px;
+    top: -50%;
+    background-color: #faedcd;
+    width: 300px;
+}
+
+.polaroid-camera::before {
+    border-radius: 30px 30px 0px 0px;
+    box-shadow: inset 0px 45px #fefae0;
+    height: 150px;
+}
+
+.polaroid-camera::after {
+    height: -40px;
+    top: -10x;
+}
+
+button {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    transition: 1s;
+    border-radius: 30px 30px 30px 30px;
+    background-color: #003049;
+    border: none;
+    top: 160px;
+    left: 585px;
+    transform-origin: bottom;
+    cursor: pointer;
+    z-index: 125;
+    color: white;
+    font-size: 1.5rem;
+    font-family: Neues-Bauen;
+}
+
+button:hover {
+    background-color: #E6E6FA;
+    color: #003049;
+    box-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 15px #fff, 0px 0px 20px #fff, 0px 0px 15px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff;
+}
+
+.fake-button
+{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    transition: 0.2s;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #003049;
+    border: none;
+    top: -95px;
+    left: 50px;
+    transform-origin: bottom;
+    z-index: 125;
+}
+
+.fake-button:active {
+    transform: scaleY(0.5);
+}
+
+.lens {
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid #333;
+    background-color: white;
+    width: 115px;
+    height: 115px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 0;
+}
+
+.lens::before, .lens::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.lens::before {
+    border: 10px;
+    width: 90px;
+    height: 90px;
+    background-color: #006494;
+}
+
+.lens::after {
+    border: 10px solid #0582ca;
+    width: 40px;
+    height: 40px;
+    background-color: #003049;
+}
+
+.reflection, .reflection::before, .reflection::after {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.reflection{
+    background-color: rgba(255, 255, 255,0.8);
+    width: 15px;
+    height: 15px;
+    top: 50px;
+    left: 60px;
+    z-index: 2;
+}
+
+.reflection::before {
+    content: "";
+    width: 115px;
+    height: 115px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.flash {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 5px;
+    z-index: 4;
+    left: 85px;
+    top: -40px;
+}
+
+.flash::before, .flash::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.flash::before {
+    border: 5px solid #006494;
+    width: 20px;
+    height: 20px;
+    background-color: #0582ca;
+}
+
+.flash::after {
+    background-color: #003554;
+    width: 8px;
+    height: 8px;
+    box-shadow: 8px -5px rgba(255, 255, 255, 0.3);
+}
+
+.stripes {
+    position:absolute;
+    width: 14.5px;
+    height: 20px;
+    background-color: #e02846;
+    top: 55px;
+    box-shadow: -14.5px 0px #568760;
+}
+
+.stripes::before, .stripes::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.stripes::before{
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    left: 50px;
+    top: -20px;
+}
+
+.stripes::after {
+    border:5px solid #ba181b;
+    background-color: #a4161a;
+    left: -130px;
+    top: -40px;
+    width: 30px;
+    height: 30px;
+}
+
+.bottom {
+    position:absolute;
+    perspective: 250px;
+    z-index: 10;
+}
+
+.bottom::before, .bottom::after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    top: 73px;
+}
+
+.bottom::before {
+    background-color: #e0d0a6;
+    width: 314px;
+    left: -157px;
+}
+
+.bottom::after {
+    width: 15px;
+    background-color: #a71e34;
+    box-shadow: -15px 0px #3a5a40;
+}
+
+.bottom-front {
+    position: absolute;
+    background-color: #ebd9ae;
+    width: 328px;
+    height: 15px;
+    top: 102px;
+    left: -164px;
+}
+
+.bottom-front::before {
+    content: "";
+    position: absolute;
+    width: 15.5px;
+    left: 164px;
+    background-color: #e02846;
+    box-shadow: -15.5px 0px #568760;
+}
+
+.bottom-front::after {
+    content: "";
+    position: absolute;
+    width: 328px;
+    height: 50px;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #540b0e;
+    top: 15px;
+}
+
+.slot {
+    position:absolute;
+    background-color: #220901;
+    width: 270px;
+    transform: translate(-50%,-50%);
+    border-radius: 10px 10px 0px 0px;
+    height: 15px;
+    z-index: 11;
+    top: 159px;
+}
+
+.shadow {
+    position: absolute;
+    width: 400px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    top: 120px;
+    left: -200px;
+    z-index: -4;
+}
+
+.photo {
+    z-index: -1;
+    transform: translate(-50%,-50%);
+    top: 50px;
+    position: absolute;
+    border-style: solid;
+    border-color: white;
+    width: 170px;
+    height: 160px;
+    border-top-width: 10px;
+    border-bottom-width: 35px;
+    border-right-width: 10px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.photo::before, .photo::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.photo::before {
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    top: 20px;
+    left: 120px;
+}
+
+.photo::after {
+    background-color: black;
+    width: 35px;
+    height: 35px;
+    top: 70px;
+    left: 30px;
+    box-shadow: 20px 20px black, -20px 25px black, 0px 30px black, -40px 70px black;
+}
+
+
+
+.flash-animation {
+    animation: flash-animation .2s ease;
+}
+
+@keyframes flash-animation {
+    0% {
+        opacity: 1;
+        transform: scale(25);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(50);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(100);
+    }
+}
+
+
+#circle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    z-index: 5;
+    top: -70px;
+    left: 55px;
+    opacity: 0;
+
+}
+
+@keyframes eject-photo {
+    0% {transform: translateY(0);left: -95px;}
+    100% {transform: translateY(115px); left: -95px;}
+}
+
+.eject-photo {
+    animation: eject-photo .6s ease forwards .3s;
+}
+
