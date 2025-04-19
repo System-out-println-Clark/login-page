@@ -18,24 +18,33 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: black;
+    background-color: rgb(233, 211, 211);
     overflow: hidden;
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 8rem;
     margin: 0%;
     position: absolute;
     top: 300px;
     width: -75px;
-    right: 12%;
-    transition: 1s;
+    right: 9%;
     margin-bottom: 190px;
-    font-family: Neues-Bauen;
-    color: #ee3a5c;
+    font-family: Marlos;
     text-align: center;
     line-height: 1.5;
     color: white;
+    background: url(../Login_Images/new-text-bg.jpg) center;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+    to {
+        background-position-x: -830px;
+    }
 }
 
 p {
@@ -47,7 +56,7 @@ p {
     transition: 1s;
     margin-bottom: 190px;
     font-family: Interea;
-    color: white;
+    color: #003049;
     text-align: center;
     line-height: 1.5;
     font-weight: 400;
@@ -57,12 +66,6 @@ p {
     white-space: nowrap;
     overflow: hidden;
     max-width: 100%;
-}
-
-.user-text {
-    color: #ee3a5c ;
-    text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff, 0px 0px 20px #fff, 0px 0px 25px #fff, 0px 0px 30px #fff, 0px 0px 35px #fff;
-    font-family: Marlos;
 }
 
 .polaroid-camera {
@@ -416,4 +419,3 @@ button:hover {
 .eject-photo {
     animation: eject-photo .6s ease forwards .3s;
 }
-
