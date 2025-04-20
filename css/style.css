@@ -18,7 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(233, 211, 211);
+    background-color: rgb(22, 22, 22);
     overflow: hidden;
 }
 
@@ -34,7 +34,7 @@ h1 {
     text-align: center;
     line-height: 1.5;
     color: white;
-    background: url(../Login_Images/new-text-bg.jpg) center;
+    background: url(../Login_Images/vivid-blurred-colorful-background.jpg) center;
     background-size: cover;
     background-clip: text;
     color: transparent;
@@ -56,7 +56,7 @@ p {
     transition: 1s;
     margin-bottom: 190px;
     font-family: Interea;
-    color: #003049;
+    color: white;
     text-align: center;
     line-height: 1.5;
     font-weight: 400;
@@ -349,7 +349,7 @@ button:hover {
     border-top-width: 10px;
     border-bottom-width: 35px;
     border-right-width: 10px;
-    background-color: black;
+    background-color: rgb(22, 22, 22);
     overflow: hidden;
 }
 
