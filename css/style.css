@@ -18,8 +18,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(22, 22, 22);
+    background: url(../Login_Images/bg.png) center;
     overflow: hidden;
+    z-index: -1;
 }
 
 h1 {
@@ -38,12 +39,20 @@ h1 {
     background-size: cover;
     background-clip: text;
     color: transparent;
-    animation: animate 30s linear infinite;
 }
+
+
+
 
 @keyframes animate {
     to {
         background-position-x: -830px;
+    }
+}
+
+@keyframes animate2 {
+    to {
+        background-position-x: 830px;
     }
 }
 
@@ -56,7 +65,7 @@ p {
     transition: 1s;
     margin-bottom: 190px;
     font-family: Interea;
-    color: white;
+    color: #FA2A55;
     text-align: center;
     line-height: 1.5;
     font-weight: 400;

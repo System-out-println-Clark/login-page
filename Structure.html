@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Romer's Digital Photography</title>
+<link rel="stylesheet" href="Design.css">
+<link rel="icon" href="Logo3.png">
+</head>
+<body>
+    <div class="blur-overlay"></div>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <img src="/Login_Images/Logo3.png" alt="Logo" class="title-image">
+                Romer's Digital Photography
+            </h1>
+            <div class="window-container" id="windowContainer">
+                <div class="window" style="background-image: url('/Login_Images/PrintingBackground.png'); background-size: cover;">
+                    <div class="bg-overlay"></div>
+                    <div class="option">🖨️Printing Service</div>
+                </div>
+                <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+                    <div class="bg-overlay"></div>
+                    <div class="option">📑Service Details</div>
+                </div>
+                <div class="window" style="background-image: url('/Login_Images/SalesBackground.png'); background-size: cover;">
+                    <div class="bg-overlaysales"></div>
+                    <div class="option">📊Sales Report</div>
+                </div>
+                
+                <div class="buttons">
+                    <button onclick="prev()">&#8249;</button>
+                    <button onclick="next()">&#8250;</button>
+                </div>
+            </div>
+
+            <script>
+                const windows = document.querySelectorAll('.window');
+                let currentIndex = 0;
+
+                function updateWindows() {
+                    windows.forEach((window, index) => {
+                        window.classList.remove('active', 'previous', 'next');
+
+                        if (index === currentIndex) {
+                            window.classList.add('active');
+                        } else if (index === (currentIndex - 1 + windows.length) % windows.length) {
+                            window.classList.add('previous');
+                        } else if (index === (currentIndex + 1) % windows.length) {
+                            window.classList.add('next');
+                        }
+                    });
+                }
+
+                function next() {
+                    currentIndex = (currentIndex + 1) % windows.length;
+                    updateWindows();
+                }
+
+                function prev() {
+                    currentIndex = (currentIndex - 1 + windows.length) % windows.length;
+                    updateWindows();
+                }
+
+                updateWindows();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
