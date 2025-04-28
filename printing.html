@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        .window {
+            position: relative;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .window:hover {
+            transform: scale(1.02);
+        }
+
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .option {
+            font-size: 1.5em;
+            padding: 10px;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .folder-options {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .folder-options.open {
+            display: block;
+        }
+
+        .option-item {
+            margin-top: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            color: black;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Printing Service Section -->
+    <div class="window" style="background-image: url('/Login_Images/PrintingBackground.png'); background-size: cover;">
+        <div class="bg-overlay"></div>
+        <div class="option" onclick="toggleFolder('printFolder')">
+            🖨️ Printing Service
+            <span id="arrow-print" class="arrow">▶️</span>
+        </div>
+        <div id="printFolder" class="folder-options">
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=Short">Short - 15</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=Long">Long - 15</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=A4">A4 - 15</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=A3">A3 - 25</a>
+            </div>
+			<div class="option-item">
+                <a href="services.html?service=Printing&size=4r">4r - 50</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=5r">5r - 70</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Printing&size=8r">8r - 100</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Laminate Service Section -->
+    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+        <div class="bg-overlay"></div>
+        <div class="option" onclick="toggleFolder('laminateFolder')">
+            🖼️ Laminate Service
+            <span id="arrow-laminate" class="arrow">▶️</span>
+        </div>
+        <div id="laminateFolder" class="folder-options">
+            <div class="option-item">
+                <a href="services.html?service=Laminate&size=ID">ID - 35</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Laminate&size=Short">Short - 100</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Laminate&size=Long">Long - 120</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Laminate&size=A4">A4 - 100</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ID Service Section -->
+    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+        <div class="bg-overlay"></div>
+        <div class="option" onclick="toggleFolder('idFolder')">
+            📑 ID Services
+            <span id="arrow-id" class="arrow">▶️</span>
+        </div>
+        <div id="idFolder" class="folder-options">
+            <div class="option-item">
+                <a href="services.html?service=ID&size=1x1_8pcs_2x2_4pcs">1x1 8 pcs 2x2 4 pcs package - 80</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=ID&size=Passport">Passport 8 pcs - 80</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=ID&size=Pagasa">Pagasa 4 pcs - 80</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=ID&size=Formal_Change">Formal attire change - 20</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Xerox Service Section -->
+    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+        <div class="bg-overlay"></div>
+        <div class="option" onclick="toggleFolder('xeroxFolder')">
+            📄 Xerox Service
+            <span id="arrow-xerox" class="arrow">▶️</span>
+        </div>
+        <div id="xeroxFolder" class="folder-options">
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Black_and_White_Short">Black and White Short - 3</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Black_and_White_Long">Black and White Long - 3</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Black_and_White_A4">Black and White A4 - 3</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Black_and_White_A3">Black and White A3 - 20</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Colored_Short">Colored Short - 20</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Colored_Long">Colored Long - 20</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Colored_A4">Colored A4 - 20</a>
+            </div>
+            <div class="option-item">
+                <a href="services.html?service=Xerox&size=Colored_A3">Colored A3 - 30</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function toggleFolder(folderId) {
+                const folder = document.getElementById(folderId);
+                const arrow = document.getElementById('arrow-' + folderId);
+                const options = folder.querySelectorAll('.option-item');
+
+                // Toggle open/close state
+                folder.classList.toggle('open');
+                arrow.classList.toggle('rotate');
+
+                // Show options with animation
+                if (folder.classList.contains('open')) {
+                    folder.classList.add('bounce');
+                    options.forEach((item, index) => {
+                        item.style.animation = `fadeIn 0.4s ease forwards`;
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.style.opacity = 1; // Make sure the option items are visible
+                    });
+                    setTimeout(() => folder.classList.remove('bounce'), 500);
+                } else {
+                    options.forEach(item => {
+                        item.style.animation = 'none';
+                        item.style.opacity = 0;
+                    });
+                }
+            }
+
+            window.toggleFolder = toggleFolder;
+        });
+    </script>
+
+</body>
+</html>

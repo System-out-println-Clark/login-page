@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Romer's Digital Photography</title>
-<link rel="stylesheet" href="Design.css">
-<link rel="icon" href="Logo3.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romer's Digital Photography</title>
+    <link rel="stylesheet" href="Design.css">
+    <link rel="icon" href="Logo3.png">
 </head>
 <body>
     <div class="blur-overlay"></div>
@@ -14,20 +15,36 @@
                 <img src="/Login_Images/Logo3.png" alt="Logo" class="title-image">
                 Romer's Digital Photography
             </h1>
+
+            <!-- Window container -->
             <div class="window-container" id="windowContainer">
+                
+                <!-- Printing Service Window -->
                 <div class="window" style="background-image: url('/Login_Images/PrintingBackground.png'); background-size: cover;">
                     <div class="bg-overlay"></div>
-                    <div class="option">🖨️Printing Service</div>
-                </div>
-                <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
-                    <div class="bg-overlay"></div>
-                    <div class="option">📑Service Details</div>
-                </div>
-                <div class="window" style="background-image: url('/Login_Images/SalesBackground.png'); background-size: cover;">
-                    <div class="bg-overlaysales"></div>
-                    <div class="option">📊Sales Report</div>
+                    <!-- Make the option a clickable link -->
+                    <a href="printing.html" style="text-decoration: none;">
+                        <div class="option">🖨️ Printing Service</div>
+                    </a>
                 </div>
                 
+                <!-- Service Details Window (no link here) -->
+                <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+                    <div class="bg-overlay"></div>
+					<a href="services.html" style="text-decoration: none;">
+						<div class="option">📑 Service Details</div>
+					</a>
+                </div>
+                
+                <!-- Sales Report Window (no link here) -->
+                <div class="window" style="background-image: url('/Login_Images/SalesBackground.png'); background-size: cover;">
+                    <div class="bg-overlaysales"></div>
+					<a href="sales.html" style="text-decoration: none;">
+						<div class="option">📊 Sales Report</div>
+					</a>
+                </div>
+                
+                <!-- Navigation buttons for sliding -->
                 <div class="buttons">
                     <button onclick="prev()">&#8249;</button>
                     <button onclick="next()">&#8250;</button>

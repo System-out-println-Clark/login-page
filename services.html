@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .service-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .service-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .counter button {
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .counter button:hover {
+            background-color: #0056b3;
+        }
+
+        .quantity {
+            font-size: 1.5em;
+            width: 50px;
+            text-align: center;
+        }
+
+        .back-link {
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #007BFF;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        .price-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .pickup-message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+        }
+
+        .navigation-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .navigation-links a {
+            margin: 0 15px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .navigation-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="service-container">
+        <div class="service-title" id="serviceTitle"></div>
+        <div class="service-description" id="serviceDescription"></div>
+
+        <div class="counter">
+            <button id="decreaseButton">-</button>
+            <input type="number" id="quantity" class="quantity" value="0" min="0" readonly>
+            <button id="increaseButton">+</button>
+        </div>
+
+        <!-- Special Instructions -->
+        <div style="margin-top: 20px;">
+            <label for="specialInstructions" style="font-weight: bold; display: block; margin-bottom: 5px;">Special Instructions:</label>
+            <textarea id="specialInstructions" rows="4" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em;"></textarea>
+        </div>
+
+        <button id="submitButton" class="submit-btn">Submit Order</button>
+
+        <div class="price-info" id="priceInfo" style="display: none;">
+            <p>Your order details:</p>
+            <p id="orderDetails"></p>
+            <p id="totalPrice"></p>
+        </div>
+
+        <!-- Pickup message -->
+        <div class="pickup-message">
+            <strong>Note:</strong> Orders are available for pickup within <strong>1 business day</strong>.
+        </div>
+
+        <!-- Navigation links to Homepage and Sales Report -->
+        <div class="navigation-links">
+            <a href="structure.html">Homepage</a>
+            <a href="sales.html">Sales Report</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            const size = params.get('size');
+
+            const serviceTitleElement = document.getElementById('serviceTitle');
+            const serviceDescriptionElement = document.getElementById('serviceDescription');
+            const quantityInput = document.getElementById('quantity');
+            const increaseButton = document.getElementById('increaseButton');
+            const decreaseButton = document.getElementById('decreaseButton');
+            const submitButton = document.getElementById('submitButton');
+            const priceInfoElement = document.getElementById('priceInfo');
+            const orderDetailsElement = document.getElementById('orderDetails');
+            const totalPriceElement = document.getElementById('totalPrice');
+
+            let quantity = 0;
+            let pricePerUnit = 0;
+
+            const priceList = {
+                "Printing": { "Short": 15, "Long": 15, "A4": 15, "A3": 25, "4r": 50, "5r": 70, "8r": 100 },
+                "Laminate": { "ID": 35, "Short": 100, "Long": 120, "A4": 100 },
+                "ID": { "1x1_8pcs_2x2_4pcs": 80, "Passport": 80, "Pagasa": 80, "Formal_Change": 20 },
+                "Xerox": {
+                    "Black_and_White_Short": 3, "Black_and_White_Long": 3, "Black_and_White_A4": 3,
+                    "Black_and_White_A3": 20, "Colored_Short": 20, "Colored_Long": 20,
+                    "Colored_A4": 20, "Colored_A3": 30
+                }
+            };
+
+            if (service && size) {
+                serviceTitleElement.textContent = `${service} - ${size}`;
+                serviceDescriptionElement.textContent = `You have selected the ${size} option for the ${service} service. Please adjust the quantity and submit your order.`;
+                pricePerUnit = priceList[service][size];
+            } else {
+                serviceTitleElement.textContent = "Service Details Not Found";
+                serviceDescriptionElement.textContent = "It seems like the selected service or size is missing. Please go back and select an option.";
+            }
+
+            increaseButton.addEventListener('click', function () {
+                quantity++;
+                updateQuantity();
+            });
+
+            decreaseButton.addEventListener('click', function () {
+                if (quantity > 0) {
+                    quantity--;
+                    updateQuantity();
+                }
+            });
+
+            function updateQuantity() {
+                quantityInput.value = quantity;
+            }
+
+            submitButton.addEventListener('click', function () {
+                const totalPrice = quantity * pricePerUnit;
+                const specialInstructions = document.getElementById('specialInstructions').value;
+                const orderDate = new Date().toISOString().split('T')[0]; // Format the current date to YYYY-MM-DD
+
+                // Display order summary
+                orderDetailsElement.textContent = `${quantity} x ${service} (${size})`;
+                totalPriceElement.textContent = `Total Price: ₱${totalPrice.toFixed(2)}`;
+                priceInfoElement.style.display = 'block';
+
+                // Save order to localStorage with date
+                const order = {
+                    service,
+                    size,
+                    quantity,
+                    totalPrice: totalPrice.toFixed(2),
+                    instructions: specialInstructions,
+                    date: orderDate
+                };
+
+                const orders = JSON.parse(localStorage.getItem('orders')) || [];
+                orders.push(order);
+                localStorage.setItem('orders', JSON.stringify(orders));
+
+                quantity = 0;
+                updateQuantity();
+            });
+        });
+    </script>
+
+</body>
+</html>
