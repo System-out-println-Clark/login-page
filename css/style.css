@@ -1,6 +1,6 @@
 @font-face {
     font-family: Neues-Bauen;
-    src: url(../../Neues\ Bauen.ttf);
+    src: url(../Neues\ Bauen.ttf);
 }
 
 @font-face {
@@ -18,7 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url(../Login_Images/bg.png) center;
+    background-color: rgb(22, 22, 22);
     overflow: hidden;
     z-index: -1;
 }
@@ -50,11 +50,6 @@ h1 {
     }
 }
 
-@keyframes animate2 {
-    to {
-        background-position-x: 830px;
-    }
-}
 
 p {
     font-size: 1.3rem;
