@@ -1,6 +1,6 @@
 @font-face {
     font-family: Neues-Bauen;
-    src: url(../Neues\ Bauen.ttf);
+    src: url(../Neues-Bauen.ttf);
 }
 
 @font-face {
@@ -39,9 +39,14 @@ h1 {
     background-size: cover;
     background-clip: text;
     color: transparent;
+    animation: animate 60s linear infinite;
 }
 
-
+@keyframes animate {
+    to {
+        background-position-x: 300px;
+    }
+}
 
 
 @keyframes animate {

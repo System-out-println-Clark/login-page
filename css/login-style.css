@@ -1,6 +1,6 @@
 @font-face {
     font-family: Neues-Bauen;
-    src: url(../Neues\ Bauen.ttf);
+    src: url(../Neues-Bauen.ttf);
 }
 
 @font-face {
@@ -23,12 +23,12 @@ body {
     height: 100vh;
     overflow-y: hidden;
     text-shadow: 0 1px 2px #000;
-    animation: animate 35s linear infinite;
+    animation: animate 15s linear infinite;
 }
 
 @keyframes animate {
     to {
-        background-position-x: 500px;
+        background-position-x: 300px;
     }
 }
 

@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Login_Images/Logo3.png">
     <title>Services</title>
     <style>
+
+        @font-face {
+            font-family: Neues-Bauen;
+            src: url(Neues-Bauen.ttf);
+        }
+
+        @font-face {
+            font-family: Marlos;
+            src: url(Marlos.otf);
+        }
+
+        @font-face {
+            font-family: Interea;
+            src: url(Interea.ttf);
+        }
+
+        body {
+            background-color: rgb(22, 22, 22);
+            font-family: Marlos;
+        }
+
         .window {
             position: relative;
             margin: 10px;
@@ -27,6 +49,11 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
+            font-family: Neues-Bauen;
         }
 
         .option {
@@ -84,7 +111,7 @@
 <body>
 
     <!-- Printing Service Section -->
-    <div class="window" style="background-image: url('/Login_Images/PrintingBackground.png'); background-size: cover;">
+    <div class="window" style="background-image: url('Login_Images/PrintingBackground.png'); background-size: cover;">
         <div class="bg-overlay"></div>
         <div class="option" onclick="toggleFolder('printFolder')">
             🖨️ Printing Service
@@ -116,7 +143,7 @@
     </div>
 
     <!-- Laminate Service Section -->
-    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+    <div class="window" style="background-image: url('Login_Images/DetailBackground.png'); background-size: cover;">
         <div class="bg-overlay"></div>
         <div class="option" onclick="toggleFolder('laminateFolder')">
             🖼️ Laminate Service
@@ -139,7 +166,7 @@
     </div>
 
     <!-- ID Service Section -->
-    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+    <div class="window" style="background-image: url('Login_Images/DetailBackground.png'); background-size: cover;">
         <div class="bg-overlay"></div>
         <div class="option" onclick="toggleFolder('idFolder')">
             📑 ID Services
@@ -163,7 +190,7 @@
     </div>
 
     <!-- Xerox Service Section -->
-    <div class="window" style="background-image: url('/Login_Images/DetailBackground.png'); background-size: cover;">
+    <div class="window" style="background-image: url('Login_Images/DetailBackground.png'); background-size: cover;">
         <div class="bg-overlay"></div>
         <div class="option" onclick="toggleFolder('xeroxFolder')">
             📄 Xerox Service

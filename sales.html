@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Report</title>
+    <link rel="icon" href="Login_Images/Logo3.png">
     <style>
+        @font-face {
+            font-family: Neues-Bauen;
+            src: url(Neues-Bauen.ttf);
+        }
+
+        @font-face {
+            font-family: Marlos;
+            src: url(Marlos.otf);
+        }
+
+        @font-face {
+            font-family: Interea;
+            src: url(Interea.ttf);
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #000;
+            color: black;
             position: relative;
         }
 
@@ -19,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('DetailBackground.png');
+            background-image: url('Login_Images/DetailBackground.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -30,6 +46,7 @@
         h1 {
             text-align: center;
             margin-top: 30px;
+            font-family: Marlos;
         }
 
         #summary {
@@ -74,7 +91,8 @@
         }
 
         .back-link:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            color: red;
         }
 
         .date-picker {
@@ -84,6 +102,17 @@
             font-size: 16px;
             border-radius: 4px;
             border: 1px solid #ccc;
+        }
+
+
+        label {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            font-family: Interea;
+            font-weight: bold;
+            font-size: 1.5rem
         }
     </style>
 </head>
